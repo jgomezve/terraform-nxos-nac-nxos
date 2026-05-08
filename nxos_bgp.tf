@@ -209,7 +209,7 @@ resource "nxos_bgp" "bgp" {
             as_override                   = try(af.as_override, false) ? "enabled" : "disabled"
             default_originate             = try(af.default_originate, false) ? "enabled" : "disabled"
             default_originate_route_map   = try(af.default_originate_route_map, null)
-            dmz_link_bandwidth            = try(af.dmz_link_bandwidth, false) ? "enabled" : "disabled"
+            dmz_link_bandwidth            = try(af.dmz_link_bandwidth, null)
             encapsulation_mpls            = try(af.encapsulation_mpls, false) ? "enabled" : "disabled"
             link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, false) ? "enabled" : "disabled"
             nexthop_thirdparty            = try(af.next_hop_third_party, false) ? "enabled" : "disabled"
@@ -302,7 +302,7 @@ resource "nxos_bgp" "bgp" {
             as_override                   = try(af.as_override, false) ? "enabled" : "disabled"
             default_originate             = try(af.default_originate, false) ? "enabled" : "disabled"
             default_originate_route_map   = try(af.default_originate_route_map, null)
-            dmz_link_bandwidth            = try(af.dmz_link_bandwidth, false) ? "enabled" : "disabled"
+            dmz_link_bandwidth            = try(af.dmz_link_bandwidth, null)
             encapsulation_mpls            = try(af.encapsulation_mpls, false) ? "enabled" : "disabled"
             link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, false) ? "enabled" : "disabled"
             nexthop_thirdparty            = try(af.next_hop_third_party, false) ? "enabled" : "disabled"
@@ -546,7 +546,7 @@ resource "nxos_bgp" "bgp" {
           as_override                   = try(af.as_override, false) ? "enabled" : "disabled"
           default_originate             = try(af.default_originate, false) ? "enabled" : "disabled"
           default_originate_route_map   = try(af.default_originate_route_map, null)
-          dmz_link_bandwidth            = try(af.dmz_link_bandwidth, false) ? "enabled" : "disabled"
+          dmz_link_bandwidth            = try(af.dmz_link_bandwidth, null) 
           encapsulation_mpls            = try(af.encapsulation_mpls, false) ? "enabled" : "disabled"
           link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, false) ? "enabled" : "disabled"
           nexthop_thirdparty            = try(af.next_hop_third_party, false) ? "enabled" : "disabled"
