@@ -102,7 +102,7 @@ resource "nxos_bgp" "bgp" {
           label_allocation_mode                               = try(af.label_allocation_mode, false) ? "enabled" : "disabled"
           load_balance_egress_filter_policy_route_map         = try(af.load_balance_egress_filter_policy_route_map, null)
           load_balance_egress_multipath_auto_policy_route_map = try(af.load_balance_egress_multipath_auto_policy_route_map, null)
-          max_path_unequal_cost                               = try(af.maximum_paths_unequal_cost, false) ? "enabled" : "disabled"
+          max_path_unequal_cost                               = try(af.maximum_paths_unequal_cost, null) 
           nexthop_load_balance_egress_multisite               = try(af.nexthop_load_balance_egress_multisite, false) ? "enabled" : "disabled"
           originate_map                                       = try(af.originate_map, null)
           origin_as_validate                                  = try(af.origin_as_validate, false) ? "enabled" : "disabled"
@@ -389,11 +389,6 @@ resource "nxos_bgp" "bgp" {
       reconnect_interval       = try(vrf.reconnect_interval, null)
       router_id_auto           = try(vrf.router_id_auto, false) ? "enabled" : "disabled"
 
-      route_control_enforce_first_as     = try(vrf.enforce_first_as, false) ? "enabled" : "disabled"
-      route_control_fib_accelerate       = try(vrf.neighbor_down_fib_accelerate, false) ? "enabled" : "disabled"
-      route_control_log_neighbor_changes = try(vrf.log_neighbor_changes, false) ? "enabled" : "disabled"
-      route_control_suppress_routes      = try(vrf.suppress_fib_pending, false) ? "enabled" : "disabled"
-
       graceful_restart_control        = try(vrf.graceful_restart, null)
       graceful_restart_interval       = try(vrf.graceful_restart_restart_time, null)
       graceful_restart_stale_interval = try(vrf.graceful_restart_stalepath_time, null)
@@ -431,7 +426,7 @@ resource "nxos_bgp" "bgp" {
         label_allocation_mode                               = try(af.label_allocation_mode, false) ? "enabled" : "disabled"
         load_balance_egress_filter_policy_route_map         = try(af.load_balance_egress_filter_policy_route_map, null)
         load_balance_egress_multipath_auto_policy_route_map = try(af.load_balance_egress_multipath_auto_policy_route_map, null)
-        max_path_unequal_cost                               = try(af.maximum_paths_unequal_cost, false) ? "enabled" : "disabled"
+        max_path_unequal_cost                               = try(af.maximum_paths_unequal_cost, null)
         nexthop_load_balance_egress_multisite               = try(af.nexthop_load_balance_egress_multisite, false) ? "enabled" : "disabled"
         originate_map                                       = try(af.originate_map, null)
         origin_as_validate                                  = try(af.origin_as_validate, false) ? "enabled" : "disabled"
