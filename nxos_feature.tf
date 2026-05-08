@@ -28,7 +28,7 @@ resource "nxos_feature" "feature" {
   ptp                  = try(local.device_config[each.key].feature.ptp, null) == null ? null : (try(local.device_config[each.key].feature.ptp) ? "enabled" : "disabled")
   pvlan                = try(local.device_config[each.key].feature.private_vlan, null) == null ? null : (try(local.device_config[each.key].feature.private_vlan) ? "enabled" : "disabled")
   scp_server           = try(local.device_config[each.key].feature.scp_server, null) == null ? null : (try(local.device_config[each.key].feature.scp_server) ? "enabled" : "disabled")
-  security_group       = try(local.device_config[each.key].feature.security_group, null) == null ? null : (try(local.device_config[each.key].feature.security_group) ? "enabled" : "disabled")
+  security_group       = try(local.device_config[each.key].feature.security_group, null) == null ? null : (try(local.device_config[each.key].feature.security_group, null))
   sflow                = try(local.device_config[each.key].feature.sflow, null) == null ? null : (try(local.device_config[each.key].feature.sflow) ? "enabled" : "disabled")
   service_acceleration = try(local.device_config[each.key].feature.service_acceleration, null) == null ? null : (try(local.device_config[each.key].feature.service_acceleration) ? "enabled" : "disabled")
   sftp_server          = try(local.device_config[each.key].feature.sftp_server, null) == null ? null : (try(local.device_config[each.key].feature.sftp_server) ? "enabled" : "disabled")
