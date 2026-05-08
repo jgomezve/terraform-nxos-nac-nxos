@@ -211,7 +211,7 @@ resource "nxos_bgp" "bgp" {
             default_originate_route_map   = try(af.default_originate_route_map, null)
             dmz_link_bandwidth            = try(af.dmz_link_bandwidth, null)
             encapsulation_mpls            = try(af.encapsulation_mpls, false) ? "enabled" : "disabled"
-            link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, false) ? "enabled" : "disabled"
+            link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, null)
             nexthop_thirdparty            = try(af.next_hop_third_party, false) ? "enabled" : "disabled"
             rewrite_rt_asn                = try(af.rewrite_evpn_rt_asn, false) ? "enabled" : "disabled"
             soft_reconfiguration_backup   = try(af.soft_reconfiguration_inbound, null)
@@ -304,7 +304,7 @@ resource "nxos_bgp" "bgp" {
             default_originate_route_map   = try(af.default_originate_route_map, null)
             dmz_link_bandwidth            = try(af.dmz_link_bandwidth, null)
             encapsulation_mpls            = try(af.encapsulation_mpls, false) ? "enabled" : "disabled"
-            link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, false) ? "enabled" : "disabled"
+            link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, null)
             nexthop_thirdparty            = try(af.next_hop_third_party, false) ? "enabled" : "disabled"
             rewrite_rt_asn                = try(af.rewrite_evpn_rt_asn, false) ? "enabled" : "disabled"
             soft_reconfiguration_backup   = try(af.soft_reconfiguration_inbound, null)
@@ -548,7 +548,7 @@ resource "nxos_bgp" "bgp" {
           default_originate_route_map   = try(af.default_originate_route_map, null)
           dmz_link_bandwidth            = try(af.dmz_link_bandwidth, null) 
           encapsulation_mpls            = try(af.encapsulation_mpls, false) ? "enabled" : "disabled"
-          link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, false) ? "enabled" : "disabled"
+          link_bandwidth_cumulative     = try(af.link_bandwidth_cumulative, null)
           nexthop_thirdparty            = try(af.next_hop_third_party, false) ? "enabled" : "disabled"
           rewrite_rt_asn                = try(af.rewrite_evpn_rt_asn, false) ? "enabled" : "disabled"
           soft_reconfiguration_backup   = try(af.soft_reconfiguration_inbound, null)
