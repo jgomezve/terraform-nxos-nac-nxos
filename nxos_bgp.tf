@@ -201,7 +201,7 @@ resource "nxos_bgp" "bgp" {
             ]))) : null
             send_community_extended       = try(af.send_community_extended, false) ? "enabled" : "disabled"
             send_community_standard       = try(af.send_community_standard, false) ? "enabled" : "disabled"
-            advertise_gateway_ip          = try(af.advertise_gateway_ip, false) ? "enabled" : "disabled"
+            advertise_gateway_ip          = try(af.advertise_gateway_ip, null)
             advertisement_interval        = try(af.advertisement_interval, null)
             advertise_local_labeled_route = try(af.advertise_local_labeled_route, false) ? "enabled" : "disabled"
             aigp                          = try(af.aigp, null)
@@ -294,7 +294,7 @@ resource "nxos_bgp" "bgp" {
             ]))) : null
             send_community_extended       = try(af.send_community_extended, false) ? "enabled" : "disabled"
             send_community_standard       = try(af.send_community_standard, false) ? "enabled" : "disabled"
-            advertise_gateway_ip          = try(af.advertise_gateway_ip, false) ? "enabled" : "disabled"
+            advertise_gateway_ip          = try(af.advertise_gateway_ip, null)
             advertisement_interval        = try(af.advertisement_interval, null)
             advertise_local_labeled_route = try(af.advertise_local_labeled_route, false) ? "enabled" : "disabled"
             aigp                          = try(af.aigp, null)
@@ -538,7 +538,7 @@ resource "nxos_bgp" "bgp" {
           ]))) : null
           send_community_extended       = try(af.send_community_extended, false) ? "enabled" : "disabled"
           send_community_standard       = try(af.send_community_standard, false) ? "enabled" : "disabled"
-          advertise_gateway_ip          = try(af.advertise_gateway_ip, false) ? "enabled" : "disabled"
+          advertise_gateway_ip          = try(af.advertise_gateway_ip, null) 
           advertisement_interval        = try(af.advertisement_interval, null)
           advertise_local_labeled_route = try(af.advertise_local_labeled_route, false) ? "enabled" : "disabled"
           aigp                          = try(af.aigp, null)
