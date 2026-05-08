@@ -204,7 +204,7 @@ resource "nxos_bgp" "bgp" {
             advertise_gateway_ip          = try(af.advertise_gateway_ip, false) ? "enabled" : "disabled"
             advertisement_interval        = try(af.advertisement_interval, null)
             advertise_local_labeled_route = try(af.advertise_local_labeled_route, false) ? "enabled" : "disabled"
-            aigp                          = try(af.aigp, false) ? "enabled" : "disabled"
+            aigp                          = try(af.aigp, null)
             allowed_self_as_count         = try(af.allowas_in_count, null)
             as_override                   = try(af.as_override, false) ? "enabled" : "disabled"
             default_originate             = try(af.default_originate, false) ? "enabled" : "disabled"
@@ -297,7 +297,7 @@ resource "nxos_bgp" "bgp" {
             advertise_gateway_ip          = try(af.advertise_gateway_ip, false) ? "enabled" : "disabled"
             advertisement_interval        = try(af.advertisement_interval, null)
             advertise_local_labeled_route = try(af.advertise_local_labeled_route, false) ? "enabled" : "disabled"
-            aigp                          = try(af.aigp, false) ? "enabled" : "disabled"
+            aigp                          = try(af.aigp, null)
             allowed_self_as_count         = try(af.allowas_in_count, null)
             as_override                   = try(af.as_override, false) ? "enabled" : "disabled"
             default_originate             = try(af.default_originate, false) ? "enabled" : "disabled"
@@ -541,7 +541,7 @@ resource "nxos_bgp" "bgp" {
           advertise_gateway_ip          = try(af.advertise_gateway_ip, false) ? "enabled" : "disabled"
           advertisement_interval        = try(af.advertisement_interval, null)
           advertise_local_labeled_route = try(af.advertise_local_labeled_route, false) ? "enabled" : "disabled"
-          aigp                          = try(af.aigp, false) ? "enabled" : "disabled"
+          aigp                          = try(af.aigp, null)
           allowed_self_as_count         = try(af.allowas_in_count, null)
           as_override                   = try(af.as_override, false) ? "enabled" : "disabled"
           default_originate             = try(af.default_originate, false) ? "enabled" : "disabled"
